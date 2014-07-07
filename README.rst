@@ -33,7 +33,7 @@ Run the following commmands to prepare your docker hosts:
 4. sudo salt 'docker*' state.sls dock_apache
 
 You should now have 2 containers running on each docker minion serving up an
-http response on ports 8080 and 8000.
+http response on ports 8080 and 8000 of each of your docker hosts.
 
 Now, to set up your haproxy server run the following commands:
 
@@ -52,4 +52,5 @@ You can view the haproxy stats at
 http://<haproxy ip>/haproxy?stats
 
 username: saltstack
+
 password: saltstack

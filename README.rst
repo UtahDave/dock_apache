@@ -11,11 +11,16 @@ response with the requester's IP address.
     <https://github.com/UtahDave/haproxy-docker>`_.
 
 To run this demo, your Salt Master and Salt Minions must be running the latest
-development version of Salt, or "Helium".
+development version of Salt, or "Helium". This demo has been run and tested on
+Ubuntu 12.04 Precise and Ubuntu 14.04 Trusty. You should be able to run this
+demo on other OS's with some slight modifications.
 
-First, copy the dock_apache and docker directories
-to `/srv/salt/` on your Salt Master. Clone the haproxy-docker repo mentioned
-above and copy the haproxy directory to `/srv/salt/` as well.
+Please be sure to change the username and password if you modify this demo to
+work in production.
+
+First, copy the dock_apache and docker directories to `/srv/salt/` on your Salt
+Master. Clone the haproxy-docker repo mentioned above and copy the haproxy
+directory to `/srv/salt/` as well.
 
 I'm assuming your haproxy vm is named "haproxy01" and your docker vms are named
 "docker01, docker02, docker03, etc".
@@ -37,7 +42,7 @@ Now, to set up your haproxy server run the following commands:
 
 Determine your haproxy server's ip address:
 
-sudo salt 'haproxy*' network.ip_addrs
+  sudo salt 'haproxy*' network.ip_addrs
 
 If you browse to that IP address you'll see the output of your docker
 containers which has been proxied by haproxy.
